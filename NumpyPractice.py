@@ -16,3 +16,10 @@ print(a[a < 5])
 #You can also select, for example, numbers that are equal to or greater than 5, and use that condition to index an array.
 five_up = (a >= 5)
 print(a[five_up])
+
+
+import numpy as np
+
+data = np.array([1, 2])
+ones = np.ones(2, dtype=np.int_)
+print(data + ones)
