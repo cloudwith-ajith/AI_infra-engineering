@@ -33,3 +33,61 @@ arr = np.array([1, 2, 3, 4, 5, 6, 7, 8])
 reverse =  np.flip(arr)
 print(reverse)
 
+
+import numpy as np 
+starter
+df = np.array(np.arange(0,10).reshape(2,5))
+print(df)
+
+print(df.shape)
+print(df.ndim)
+print(df.size)
+
+a = np.ones(6).reshape(3,2)
+print(a)
+
+b = np.zeros(6).reshape(3,2)
+print(b)
+
+print(type(b))
+
+# indexing 
+
+l1 = [1,2,3,4,5,6]
+l2 = [7,8,9,10,11,12]
+l3 = [13,14,15,16,17,18]
+n = np.array([l1,l2,l3])
+print(n)
+
+#indexing and slicing 
+print(n[2][3])
+print(n[:2,0:3])
+print(n[1][-1])
+
+print(np.linspace(1,10,50))
+
+# sort
+c = np.array([l1,l2])
+
+print(np.sort(c))
+# revserse
+print(np.flip(c))
+
+# random values
+print(np.random.rand(3,3))
+print(np.sort(np.random.randint(1,100,8)))
+
+# concatenate
+m = np.concatenate([l2,l3])
+print(m)
+
+import numpy as np 
+#  normal operation 
+a = np.array(np.arange(1,11).reshape(2,5))
+print(a)
+print(a.min(),"min value ")
+print(a.max(),"max values")
+print(a.sum()," sum  of the array ")
+# copy the value
+x = a.copy()
+
