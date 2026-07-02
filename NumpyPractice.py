@@ -118,15 +118,3 @@ print(m.loc[2]) # this is used to get the row
 print(m.iloc[:2,:])  # this is one used to access the both the rows and columns 
 
 
-import time
-from concurrent.futures import ThreadPoolExecutor 
-start = time.time()
-def num(n):
-    return n
-    
-# Fixed max_workers and matched the import name
-with ThreadPoolExecutor(max_workers=None) as Executer:
-    for x in Executer.map(num, range(10)):
-        print(x)
-
-print(time.time()-start)
