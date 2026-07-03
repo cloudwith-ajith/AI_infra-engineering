@@ -12,7 +12,7 @@ with ThreadPoolExecutor(max_workers=None) as Executer:
         print(x)
 
 print(time.time()-start)
-
+----------------------------------SHA256-------------hash algorithm
 import hashlib
 
 key = "Ajith got 1000million in blockchain"
