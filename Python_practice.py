@@ -12,3 +12,12 @@ with ThreadPoolExecutor(max_workers=None) as Executer:
         print(x)
 
 print(time.time()-start)
+
+import hashlib
+
+key = "Ajith got 1000million in blockchain"
+
+info = hashlib.sha256(key.encode())
+
+print(info.hexdigest())
+
