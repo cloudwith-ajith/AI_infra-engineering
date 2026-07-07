@@ -5,6 +5,28 @@ app = Flask(__name__)
 def home():
     return "<html><body><center><h1>Hi there!!!!!!<br>Welcome to  my page</h1></center></body></html>"
 
+@app.route('/match_result/<outcome>')
+def result(outcome):
+    return f"Team : {outcome}"
+
+
+@app.route('/score/<int:outcome>')
+def score(outcome):
+    return f" score : {outcome}"
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
+#---------------------------------redirect-----url_for("endpoint",**values)--------
+#------return redirect(url_for(result,age = age))---------
+
+from flask import Flask,redirect,url_for
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "<html><body><center><h1>Hi there!!!!!!<br>Welcome to  my page</h1></center></body></html>"
+
 
 @app.route("/eligble/<int:age>")
 def eligble(age):
