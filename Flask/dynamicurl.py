@@ -1,0 +1,26 @@
+from flask import Flask,redirect,url_for
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "<html><body><center><h1>Hi there!!!!!!<br>Welcome to  my page</h1></center></body></html>"
+
+
+@app.route("/eligble/<int:age>")
+def eligble(age):
+    return f"Age is{age},so you can voter for the election"
+
+@app.route("/noteligble/<int:age>")
+def noteligble(age):
+    return f"Age is {age}, so you cannot voter for the election"
+
+@app.route("/voter/<int:age>")
+def age(age):
+    result = ""
+    if age >= 18:
+        result ="eligble"
+    else:
+        result ="noteligble"
+    return redirect(url_for(result,age = age))
+if __name__ == "__main__":
+    app.run(debug=True)
