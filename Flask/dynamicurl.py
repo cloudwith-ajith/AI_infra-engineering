@@ -11,7 +11,7 @@ def result(outcome):
 
 
 @app.route('/score/<int:outcome>')
-def score(outcome):
+def score(outcome):  
     return f" score : {outcome}"
 
 if __name__ == "__main__":
