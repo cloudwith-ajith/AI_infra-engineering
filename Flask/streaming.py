@@ -1,27 +1,26 @@
-from flask import Flask, Response 
+from flask import Flask,render_template,Response 
+import cv2 
 app = Flask(__name__)
-camera =  cv2.video.Capture(0)
 
-def frame_capture():
+def stream():
+    camera = cv2.VideoCapture(0)
     while True:
-        stauts_code, frames = camera.read()
-        if not stauts_code:
+        code,frame = camera.read()
+        if not code:
             break
         else:
-            res, buffer = cv2.imencode("jpeg",frames)
-            frame   = buffer.tobytes() 
-
+            res,buffer =cv2.imencode(".jpeg",frame)
+            frame = buffer.tobytes()
             yield(b'--frame\r\n'
                    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')
+             
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return render_template("home.html")
 
 @app.route("/video")
 def video():
-    return Response(func(),mimetype='multipart/x-mixed-replace; boundary=frame')
-    
+    return Response(stream(),mimetype='multipart/x-mixed-replace; boundary=frame')
 
-    
 if __name__ == "__main__":
-    app.run(debug = True) 
+    app.run(debug=True)
