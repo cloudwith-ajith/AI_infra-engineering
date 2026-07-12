@@ -24,7 +24,7 @@ create database custormer;
 use custormer;
 
 #To show thw table present in the db
-
+   
 show tables;
 
 # to delect/deop the db 
