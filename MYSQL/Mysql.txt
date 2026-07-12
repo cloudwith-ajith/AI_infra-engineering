@@ -8,7 +8,6 @@ Starting With the DBMS
 5.  SQL Drop table
 */
 show databases;
-
 use world;
 
 show tables;
