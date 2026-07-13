@@ -14,3 +14,30 @@ INSERT INTO customer_accounts VALUES
 
 # To get the value
 select * from customer_accounts;
+
+# challenges1 --- to get the null value form the table,
+--behind the scence, it scan email caloumns, row by row,
+--found the empty memory placeholder and return the values
+
+select * from customer_accounts
+where email is null;
+
+--use the update the value, best thing is we need to add the values to the
+--existin values
+update customer_accounts set account_balance =  account_balance + 50.00 
+where account_id = 3;
+
+select * from customer_accounts;
+
+
+Delete from customer_accounts
+where account_id = 2;
+
+select * from customer_accounts;
+
+--for create the new columns and ading the value as the active
+
+ALTER TABLE customer_accounts
+ADD COLUMN account_status VARCHAR(10) DEFAULT 'active';
+
+SELECT * FROM customer_accounts;
