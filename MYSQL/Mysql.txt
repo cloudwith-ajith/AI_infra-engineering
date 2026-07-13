@@ -65,3 +65,4 @@ drop database employee;
 
 show databases
 
+-------------------------------------NULL,UPDATE,DELETE,ALTER-------------------
