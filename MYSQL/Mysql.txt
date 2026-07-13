@@ -66,3 +66,30 @@ drop database employee;
 show databases
 
 -------------------------------------NULL,UPDATE,DELETE,ALTER-------------------
+
+SHOW databases;
+
+create database student;
+
+use student;
+
+drop table student_info;
+
+create table student_info(id integer auto_increment, student_name varchar(15), mark integer,primary key(id));
+
+insert into student_info(student_name,mark)
+values
+("Ajith kumar", 99),
+("Anil kumar",89),
+("vijay",79),
+("Gokul",90),
+("Manish",79),
+("Pavan",Null);
+
+show tables;
+
+select * from student_info;
+
+# To get the null values
+
+select * from student_info where mark is null
