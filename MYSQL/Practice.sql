@@ -41,3 +41,43 @@ ALTER TABLE customer_accounts
 ADD COLUMN account_status VARCHAR(10) DEFAULT 'active';
 
 SELECT * FROM customer_accounts;
+
+-------DAY3
+show databases;
+
+use student;
+
+show tables;
+select * from student_info;
+
+create table Instagram_login(
+id integer not null,
+user_name varchar(15) not null,
+email varchar(20) not null,
+age integer,
+phone_number integer,
+sex varchar(8));
+
+select * from Instagram_login;
+
+alter table Instagram_login
+modify phone_number varchar(10);
+
+insert into Instagram_login values 
+(1,"ajith","ajith@gmail.com",null,8220419685,"male"),
+(2,"vijay","vijay@gmail.com",31,null,"male");
+
+show tables;
+
+desc instagram_login;
+
+#unique
+
+alter table instagram_login
+add unique(id);
+
+alter table instagram_login
+add unique(phone_number);
+
+alter table instagram_login
+add  constraint pk_key primary key(id,phone_number);
