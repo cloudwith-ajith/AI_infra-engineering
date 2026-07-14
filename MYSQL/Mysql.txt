@@ -25,7 +25,7 @@ use custormer;
 #To show thw table present in the db
    
 show tables;
-
+ 
 # to delect/deop the db 
 
 drop database custormer;
