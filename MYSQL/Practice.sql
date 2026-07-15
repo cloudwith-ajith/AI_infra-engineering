@@ -97,7 +97,7 @@ insert into user(user_id,first_name,last_name,account_balance,age) values
 
 
 select * from user
-
+---------------------------------------primary key
 CREATE TABLE user(
   user_id INT NOT NULL PRIMARY KEY,
   first_name VARCHAR(20) NOT NULL,
