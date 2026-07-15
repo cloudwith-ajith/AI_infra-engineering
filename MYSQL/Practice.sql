@@ -81,3 +81,69 @@ add unique(phone_number);
 
 alter table instagram_login
 add  constraint pk_key primary key(id,phone_number);
+----------------------------------------primary key, check ,default
+create table user(
+  user_id int not null primary key,
+  first_name varchar(20) not null,
+  last_name varchar(20),
+  account_balance int,
+  age int check(age >= 18),
+  join_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+insert into user(user_id,first_name,last_name,account_balance,age) values
+  (1,"Ajith","kumar",99, 23),
+  (2,"Shamini","s", 340,19);
+
+
+select * from user
+
+CREATE TABLE user(
+  user_id INT NOT NULL PRIMARY KEY,
+  first_name VARCHAR(20) NOT NULL,
+  last_name VARCHAR(20),
+  account_balance INT,
+  age INT,
+  join_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Removed the extra outer parentheses here
+INSERT INTO user(user_id, first_name, last_name, account_balance, age) VALUES 
+  (1, "Ajith", "kumar", 99, 23),
+  (2, "Shamini", "s", 340, 21);
+
+SELECT * FROM user;
+
+create table user(
+  user_id int not null primary key,
+  first_name varchar(20) not null,
+  last_name varchar(20),
+  account_balance int,
+  age int check(age >= 18),
+  join_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+insert into user(user_id,first_name,last_name,account_balance,age) values
+  (1,"Ajith","kumar",99, 23),
+  (2,"Shamini","s", 340,19);
+
+
+select * from user
+
+
+create table user(
+  id int not null primary key auto_increment,
+  first_name varchar(20),
+  last_name varchar(20),
+  salary int,
+  age int,
+  join_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  constraint Age_voliation check(age >= 18)
+);
+
+insert into user( first_name,last_name,salary,age) values 
+("Ajith","kumar",123,23),
+("shamini","s",90000,18);
+
+select * from user;
+
