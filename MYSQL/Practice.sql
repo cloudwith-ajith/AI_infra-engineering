@@ -81,7 +81,7 @@ add unique(phone_number);
 
 alter table instagram_login
 add  constraint pk_key primary key(id,phone_number);
-----------------------------------------primary key, check ,default
+----------------------------------------primary key, check ,default,foreign key
 create table user(
   user_id int not null primary key,
   first_name varchar(20) not null,
