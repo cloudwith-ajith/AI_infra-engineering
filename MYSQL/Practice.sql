@@ -147,3 +147,28 @@ insert into user( first_name,last_name,salary,age) values
 
 select * from user;
 
+---------indexs,view
+create table student_info (
+  id int not null primary key ,
+  first_name varchar(25) not null,
+  last_name varchar(20) not null,
+  age int
+);
+
+
+insert into student_info values
+(1,"Ajith","Kumar",23),
+(2,"Ajay","Kumar",22),
+(3,"Anil","Kumar",23),
+(4,"Akash","Kumar",23);
+
+
+select * from student_info;
+
+--creating the index
+
+create index id_index on student_info(id);
+
+
+desc student_info;
+
