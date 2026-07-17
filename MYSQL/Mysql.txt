@@ -172,4 +172,19 @@ where id = 2;
 select s.student_name,i.user_name,i.phone_number, s.mark 
 from instagram_login i  left join student_info s on i.id = s.id; 
 
+-------------------------------stored procedures
+# stored procedures, like function in programming language 
+/*
+CREATE DEFINER=`root`@`localhost` PROCEDURE `get_insta`()
+BEGIN
+select * from instagram_login;
+END
+
+key words --> call 
+parameters (IN,OUT,INOUT);
+*/
+call get_insta("female");
+call get_insta("male");
+
+
 
