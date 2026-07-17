@@ -272,3 +272,30 @@ Output:
 | NULL | NULL       | NULL      | NULL |  5 | BME        |        450 |            7 |
 |    2 | Anil       | Kumar     |   18 |  2 | EEE        |        409 |           15 |
 +------+------------+-----------+------+----+------------+------------+--------------+
+
+
+----------------------------------------full outer join 
+select * from student
+left join student_records on student.id = student_records.id
+union
+select * from student
+right join student_records on student.id = student_records.id;
+
+Output:
++----+------------+-----------+------+
+| id | first_name | last_name | age  |
++----+------------+-----------+------+
+|  1 | Ajith      | Kumar     |   18 |
+|  2 | Anil       | Kumar     |   18 |
+|  3 | Akash      | Kumar     |   18 |
+|  4 | Amal       | Kumar     |   18 |
++----+------------+-----------+------+
++------+------------+-----------+------+------+------------+------------+--------------+
+| id   | first_name | last_name | age  | id   | department | total_mark | student_rank |
++------+------------+-----------+------+------+------------+------------+--------------+
+|    1 | Ajith      | Kumar     |   18 |    1 | CSE        |        499 |            1 |
+|    2 | Anil       | Kumar     |   18 |    2 | EEE        |        409 |           15 |
+|    3 | Akash      | Kumar     |   18 |    3 | CSE        |        412 |            6 |
+|    4 | Amal       | Kumar     |   18 | NULL | NULL       |       NULL |         NULL |
+| NULL | NULL       | NULL      | NULL |    5 | BME        |        450 |            7 |
++------+------------+-----------+------+------+------------+------------+--------------+
