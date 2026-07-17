@@ -130,6 +130,26 @@ add unique(id);
 
 alter table instagram_login
 add unique(phone_number);
+-----------------------------------------joins and stored produec-----
+show databases;
+
+use student;
+
+show tables;
+
+select * from instagram_login;
+
+select * from student_info;
+
+/*
+Joins 
+inner join 
+left join
+right join 
+Full join 
+natural join
+cross join 
+*/
 
 alter table instagram_login
 add  constraint pk_key primary key(id,phone_number);
