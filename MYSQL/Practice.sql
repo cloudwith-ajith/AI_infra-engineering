@@ -202,3 +202,30 @@ insert into student_records values
 (1,'CSE',499,1),
 (3,'CSE',412,6),
 (2,'EEE',409,15);
+
+------------------------------------------inner join 
+
+select * from student_records;
+ 
+select * from student 
+inner join student_records on student.id = student_records.id;
+
+select a.id,a.first_name, a.last_name, b.department,b.total_mark,b.student_rank from student a 
+inner join student_records b  on a.id = b.id;
+
+Output:
++----+------------+-----------+------+
+| id | first_name | last_name | age  |
++----+------------+-----------+------+
+|  1 | Ajith      | Kumar     |   18 |
+|  2 | Anil       | Kumar     |   18 |
+|  3 | Akash      | Kumar     |   18 |
+|  4 | Amal       | Kumar     |   18 |
++----+------------+-----------+------+
++----+------------+-----------+------------+------------+--------------+
+| id | first_name | last_name | department | total_mark | student_rank |
++----+------------+-----------+------------+------------+--------------+
+|  1 | Ajith      | Kumar     | CSE        |        499 |            1 |
+|  3 | Akash      | Kumar     | CSE        |        412 |            6 |
+|  2 | Anil       | Kumar     | EEE        |        409 |           15 |
++----+------------+-----------+------------+------------+--------------+
