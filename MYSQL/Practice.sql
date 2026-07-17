@@ -172,3 +172,33 @@ create index id_index on student_info(id);
 
 desc student_info;
 
+
+----joins
+create table student(
+  id int not  null,
+  first_name varchar(20),
+  last_name varchar(20),
+  age int 
+);
+
+insert into student values
+(1,"Ajith","Kumar",18),
+(2,"Anil","Kumar",18),
+(3,"Akash","Kumar",18),
+(4,"Amal","Kumar",18);
+
+
+select * from student;
+
+
+create table student_records (
+  id int not null,
+  department varchar(20),
+  total_mark int,
+  student_rank int 
+);
+
+insert into student_records values
+(1,'CSE',499,1),
+(3,'CSE',412,6),
+(2,'EEE',409,15);
