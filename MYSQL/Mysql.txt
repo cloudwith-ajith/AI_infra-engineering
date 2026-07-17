@@ -130,6 +130,10 @@ add unique(id);
 
 alter table instagram_login
 add unique(phone_number);
+
+alter table instagram_login
+add  constraint pk_key primary key(id,phone_number);
+select * from student_info where mark is null
 -----------------------------------------joins and stored produec-----
 show databases;
 
@@ -163,6 +167,9 @@ select * from student_info;
 update student_info set student_name = "vijay"
 where id = 2;
 
-alter table instagram_login
-add  constraint pk_key primary key(id,phone_number);
-select * from student_info where mark is null
+------------------------left join 
+# left join
+select s.student_name,i.user_name,i.phone_number, s.mark 
+from instagram_login i  left join student_info s on i.id = s.id; 
+
+
