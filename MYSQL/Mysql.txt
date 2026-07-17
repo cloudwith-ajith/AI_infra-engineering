@@ -151,6 +151,18 @@ natural join
 cross join 
 */
 
+# inner join 
+show tables;
+
+select * from instagram_login;
+
+select * from student_info;
+
+# update name using the update key word
+# this is used to update the name bcz of the differ in the table 
+update student_info set student_name = "vijay"
+where id = 2;
+
 alter table instagram_login
 add  constraint pk_key primary key(id,phone_number);
 select * from student_info where mark is null
