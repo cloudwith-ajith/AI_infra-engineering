@@ -186,5 +186,100 @@ parameters (IN,OUT,INOUT);
 call get_insta("female");
 call get_insta("male");
 
+show databases;
+
+use student;
+
+show tables;
+
+drop table instagram_login;
+
+drop table student_info;
+
+drop database student;
+
+create database demo;
+
+show databases;
+
+use demo;
+
+CREATE TABLE Designation (
+    design_id INT PRIMARY KEY,
+    design_name VARCHAR(50),
+    department VARCHAR(50)
+);
+
+INSERT INTO Designation VALUES 
+(101, 'Manager', 'Sales'),
+(102, 'Senior Engineer', 'Engineering'),
+(103, 'Data Analyst', 'Analytics'),
+(104, 'HR Specialist', 'Human Resources'),
+(105, 'Intern', 'Engineering');
+
+
+CREATE TABLE Employee (
+    emp_id INT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    salary INT,
+    hire_date DATE,
+    designation_id INT,
+    FOREIGN KEY (designation_id) REFERENCES Designation(design_id)
+);
+
+INSERT INTO Employee VALUES 
+(1, 'Amit', 'Sharma', 85000, '2021-03-15', 101),
+(2, 'Priya', 'Patel', 95000, '2020-06-01', 102),
+(3, 'Rahul', 'Verma', 70000, '2022-01-10', 103),
+(4, 'Sneha', 'Reddy', 65000, '2021-11-20', 104),
+(5, 'Vikram', 'Singh', 30000, '2023-05-01', 105),
+(6, 'Rohan', 'Das', 72000, '2022-08-14', 103);
+
+CREATE TABLE Bonus (
+    bonus_id INT PRIMARY KEY,
+    emp_id INT,
+    bonus_amount INT,
+    bonus_date DATE,
+    FOREIGN KEY (emp_id) REFERENCES Employee(emp_id)
+);
+
+INSERT INTO Bonus VALUES 
+(501, 1, 5000, '2023-12-25'),
+(502, 2, 7000, '2023-12-25'),
+(503, 3, 4000, '2023-12-25'),
+(504, 1, 3500, '2024-06-15'),
+(505, 4, 4500, '2023-12-25');
+
+show tables;
+
+select * from bonus;
+desc bonus;
+select * from designation;
+desc designation;
+select * from employee;
+desc employee;
+
+select * from employee
+where first_name like '%riy%';
+
+select concat(first_name,last_name) as employee_name,salary from employee
+where salary> 50000 and salary < 80000;
+
+select * from employee
+where hire_date > "2021-01-01";
+
+select * from employee
+where year(hire_date)  = 2021;
+
+select * from employee
+where month(hire_date) = 11;
+use department;
+select count(*) as number_count,department from designation
+group by department;
+
+
+
+
 
 
