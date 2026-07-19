@@ -300,6 +300,13 @@ order by salary desc limit 4 ;
 select * from employee
 order by salary desc limit 5,1;
 
+----------------------------------groupby---
+In SQL, structural commands have a strict execution order. You cannot place a WHERE condition after a GROUP BY clause.
+SELECT department, COUNT(*) AS total_count 
+FROM employee
+WHERE department = 'Admin'
+GROUP BY department;
+
 
 
 
