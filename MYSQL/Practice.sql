@@ -336,3 +336,76 @@ Output:
 |  2 | Anil       | Kumar     |   18 |  2 | EEE        |        409 |           15 |
 |  1 | Ajith      | Kumar     |   18 |  2 | EEE        |        409 |           15 |
 +----+------------+-----------+------+----+------------+------------+--------------+
+
+
+
+--------interview prep
+create database company;
+
+show databases;
+
+use company;
+
+create table employee(
+emp_id int not null auto_increment,
+first_name varchar(15) not null,
+last_name varchar(10),
+salary varchar(6),
+join_date datetime default current_timestamp,
+department varchar(10),
+primary key(emp_id)
+);
+
+
+INSERT INTO employee (first_name, last_name, salary, join_date, department) VALUES 
+('Amit', 'Sharma', '85000', '2022-03-15 09:00:00', 'Sales'),
+('Priya', 'Patel', '95000', '2021-06-01 10:30:00', 'Admin'),
+('Rahul', 'Verma', '70000', '2023-01-10 14:15:00', 'HR'),
+('Sneha', 'Reddy', '65000', '2022-11-20 11:00:00', 'Sales'),
+('Vikram', 'Singh', '30000', '2024-05-01 09:30:00', 'Admin'),
+('Rohan', 'Das', '72000', '2023-08-14 16:45:00', 'HR');
+
+#-- These rows omit join_date and last_name to test your table's DEFAULT and NULL capabilities
+INSERT INTO employee (first_name, last_name, salary, department) VALUES 
+('Ananya', 'Mishra', '88000', 'Sales'),
+('Karan', NULL, '45000', 'Admin');
+
+select * from employee;
+
+create table bonus(
+emp_id int not null,
+bonus_date date,
+bonus_amount int,
+foreign key (emp_id) references employee(emp_id)
+);
+
+INSERT INTO bonus (emp_id, bonus_date, bonus_amount) VALUES 
+(1, '2023-12-25', 5000),  -- Amit (Sales)
+(2, '2023-12-25', 7000),  -- Priya (Admin)
+(3, '2023-12-25', 4000),  -- Rahul (HR)
+(1, '2024-06-15', 3500),  -- Amit gets a second bonus
+(4, '2023-12-25', 4500),  -- Sneha (Sales)
+(7, '2024-01-01', 6000);  -- Ananya (Sales)
+
+select * from bonus;
+
+select * from employee
+left join bonus on employee.emp_id = bonus.emp_id;
+
+create table designation(
+des_id int not null,
+designation varchar(15),
+designation_date date,
+foreign key (des_id)references employee(emp_id)
+);
+INSERT INTO designation (des_id, designation, designation_date) VALUES 
+(1, 'Manager', '2022-03-15'),      -- Amit
+(2, 'Lead Developer', '2021-06-01'),-- Priya
+(3, 'HR Specialist', '2023-01-10'), -- Rahul
+(4, 'Executive', '2022-11-20'),     -- Sneha
+(5, 'Intern', '2024-05-01'),        -- Vikram
+(6, 'Analyst', '2023-08-14'),       -- Rohan
+(7, 'Senior Manager', '2024-02-01');-- Ananya
+
+-- Employee 8 (Karan) is left without a designation row to help you practice NULL handling joins.
+select * from designation
