@@ -278,7 +278,7 @@ use department;
 select count(*) as number_count,department from designation
 group by department;
 
------------------------------
+-----------------------------limit, order by desc, clone
 select * from employee;
 select * from designation;
 
