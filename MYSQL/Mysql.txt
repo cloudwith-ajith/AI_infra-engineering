@@ -278,6 +278,28 @@ use department;
 select count(*) as number_count,department from designation
 group by department;
 
+-----------------------------
+select * from employee;
+select * from designation;
+
+select * from employee inner join designation
+on employee.designation_id = designation.design_id
+where design_name ="Intern";
+
+
+create table Employee_clone as
+select * from employee;
+
+show tables;
+
+select * from Employee_clone;
+#fourth highest salary using the limit n-1,1;
+select * from employee
+order by salary desc limit 4 ; 
+#sixth highest salary
+select * from employee
+order by salary desc limit 5,1;
+
 
 
 
