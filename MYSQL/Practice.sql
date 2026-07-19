@@ -409,3 +409,50 @@ INSERT INTO designation (des_id, designation, designation_date) VALUES
 
 -- Employee 8 (Karan) is left without a designation row to help you practice NULL handling joins.
 select * from designation
+
+select * from bonus;
+desc bonus;
+select * from designation;
+desc designation;
+select * from employee;
+desc employee;
+
+select * from employee
+where first_name like '%riy%';
+
+select concat(first_name,last_name) as employee_name,salary from employee
+where salary> 50000 and salary < 80000;
+
+select * from employee
+where hire_date > "2021-01-01";
+
+select * from employee
+where year(hire_date)  = 2021;
+
+select * from employee
+where month(hire_date) = 11;
+use department;
+select count(*) as number_count,department from designation
+group by department;
+
+-----------------------------limit, order by desc, clone
+select * from employee;
+select * from designation;
+
+select * from employee inner join designation
+on employee.designation_id = designation.design_id
+where design_name ="Intern";
+
+
+create table Employee_clone as
+select * from employee;
+
+show tables;
+
+select * from Employee_clone;
+#fourth highest salary using the limit n-1,1;
+select * from employee
+order by salary desc limit 4 ; 
+#sixth highest salary
+select * from employee
+order by salary desc limit 5,1;
