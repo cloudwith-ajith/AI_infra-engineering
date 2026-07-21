@@ -1,0 +1,30 @@
+use employe
+switched to db employe
+db.collection.insertone(){}
+SyntaxError: Missing semicolon. (1:25)
+
+> 1 | db.collection.insertone(){}
+    |                          ^
+db.collection.insertone({ "name" : "Ajith","age":23})
+TypeError: db.collection.insertone is not a function
+db.collection.insertOne({ "name": "Ajith","age":23})
+{
+  acknowledged: true,
+  insertedId: ObjectId('6a5ee2b1512933d7ff5bc607')
+}
+ 
+ 
+ 
+db.collection.insertMany({"name":"gokul","age":23},{"name":"bobby","age":24})
+MongoInvalidArgumentError: Argument "docs" must be an array of documents
+db.collection.insertMany([{"name":"gokul","age":23},{"name":"bobby","age":24}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('6a5ee366512933d7ff5bc608'),
+    '1': ObjectId('6a5ee366512933d7ff5bc609')
+  }
+}
+employe
+
+
