@@ -20,3 +20,8 @@ student_info.find_one()
 for i  in student_info.find({}):
     print(i)
 
+
+# how to find the particular element
+#  similar like select * from table where name = "abju"
+# in sql we use that, in mongo db we use this part 
+student_info.find_one({"name" :"abju" })
