@@ -6,6 +6,7 @@ mydb = client['student']
 
 student_info = mydb.student_info
 
+
 #used to insert  one value
 student_info.insert_one(record)
 
