@@ -19,7 +19,7 @@ print(a[five_up])
 
 
 import numpy as np
-
+ 
 data = np.array([1, 2])
 ones = np.ones(2, dtype=np.int_)
 print(data + ones)
