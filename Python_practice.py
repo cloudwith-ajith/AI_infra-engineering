@@ -10,7 +10,7 @@ def num(n):
 with ThreadPoolExecutor(max_workers=None) as Executer:
     for x in Executer.map(num, range(10)):
         print(x)
-
+ 
 print(time.time()-start)
 ----------------------------------SHA256-------------hash algorithm
 import hashlib
